@@ -1,4 +1,4 @@
-//! `import std_prelude::*` so you can be ready to code!
+//! `use std_prelude::*` so you can be ready to code!
 //!
 //! # Traits
 //! Not having common traits imported is one of the most annoying gotchas in rust when coming from
