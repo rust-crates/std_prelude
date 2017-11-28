@@ -8,6 +8,7 @@
 //! common, but you must first import the `FromIterator` trait.
 //!
 //! The following are the traits that are implemented and why:
+//!
 //! - `std::ascii::AsciiExt`: adds the `to_ascii_uppercase` onto
 //!   `&str` types.
 //! - `std::fmt::Debug`: allows you to define Debug manually.
@@ -40,9 +41,11 @@
 //!     - `File::write` to open a file for writing
 //! - `std::fs::OpenOptions` for more file opening options
 //! - `std::fs::ReadDir`: to iterate over the entries in a directory.
-//! - `std::io::BufReader`: the BufRead struct wraps `io::Read` using a buffer, reducing
-//!   the number of calls to the OS and providing nicer methods for accessing exactly what you want
-//!   (i.e. `read_line`).
+//! - `std::io::BufReader`: the BufRead struct wraps `io::Read` using a buffer reducing the number
+//!   of OS calls and giving helpful methods
+//!   - `read_line()`: read a single line
+//!   - `lines()`: return an iterator over all lines.
+//!   - `split(byte: u8)`: return an iterator which splits at the chosen byte.
 //! - `std::io::BufWriter`: similar to `BufReader`, buffers writes to reduce the number of calls to
 //!   the OS.
 //! - `std::path::{Path, PathBuf}`: specifies an os path.
@@ -60,6 +63,7 @@
 //!   `std::thread::sleep`.
 //!
 //! # functions
+//!
 //! - `std::mem::{size_of, size_of_val}`: get the size of a type. This is
 //!   safe and common enough that it should be always available.
 //! - `std::thread::sleep`: put the thread to sleep for a `Duration`.
