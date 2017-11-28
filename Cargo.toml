@@ -1,9 +1,9 @@
 [package]
-name = "prelude"
-version = "0.2.1"
+name = "std_prelude"
+version = "0.2.2"
 authors = ["Garrett Berg <vitiral@gmail.com>"]
 
-description = "RENAMED TO \"std_prelude\": prelude that the rust stdlib should have always had"
+description = "prelude that the rust stdlib should have always had"
 repository = "https://github.com/vitiral/std_prelude"
 readme = "README.md"
 keywords = ["std", "prelude"]
