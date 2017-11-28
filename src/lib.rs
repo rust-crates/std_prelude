@@ -61,6 +61,16 @@
 //! - `std::thread::sleep`: put the thread to sleep for a `Duration`.
 //! - `std::thread::spawn`: spawn a function in a new thread. In rust this is memory safe, so it is
 //!   nice to have it always available.
+//!
+//! # primitive-type modules
+//! The following modules are imported so that it is easy to access their relevant constants and
+//! constructors.
+//!
+//! - `u8 u16 u64 usize`: unsigned integer modules with `MAX` and `MIN`
+//! - `i8 i16 i64 isize`: signed integer modules with `MAX` and `MIN`
+//! - `f32 f64`: floating point modules with not just `MAX` and `MIN` but also `NAN`, `INFINITY`,
+//!   etc as well as a `consts` module with basic mathematical constants like `PI` and `E`.
+//! - `str`: core string type with `from_utf8` function.
 
 // traits
 pub use std::ascii::AsciiExt;
@@ -100,3 +110,17 @@ pub use std::time::Duration;
 // functions
 pub use std::mem::{size_of, size_of_val};
 pub use std::thread::{sleep, spawn};
+
+// modules
+
+pub use std::u8;
+pub use std::u16;
+pub use std::u64;
+pub use std::usize;
+pub use std::i8;
+pub use std::i16;
+pub use std::i64;
+pub use std::isize;
+pub use std::f32;
+pub use std::f64;
+pub use std::str;

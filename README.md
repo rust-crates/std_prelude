@@ -10,12 +10,11 @@ use std_prelude::*;
 For a full list of the items that are imported, see
 [the crate documentation][1]
 
-This library is to add several "often used" traits, structs and methods
-that (in the opinionated version of this author) should have been
-included in the stdlib all along. It is incredubly annoying to call
-(for instance) `usize::from_str` only to find you need to import a pretty
-standard trait into scope (`use std::str::FromStr`). This crate hopes to
-reduce the pain of this papercut.
+This library is to add several "often used" traits, structs and methods that
+(in the opinionated version of this author) should have been included in the
+stdlib all along. It is incredubly annoying to call (for instance)
+`Vec::from_iter` only to find you need to import a pretty standard trait into
+scope (`FromIterator`). This crate hopes to reduce the pain of this papercut.
 
 The author of this crate wants the rust community itself to decide which items
 should be included here.  If this crate becomes useful enough, it is the
