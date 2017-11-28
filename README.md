@@ -33,7 +33,7 @@ If you think any of these things are true, please open an issue!
 ## Guarantees
 I offer the following guarantees for this lib
 
-- Once at v1.0 (fairly soon) all new versions of prelude will increment the
+- Once at v1.0 (fairly soon) all new versions of std_prelude will increment the
   MAJOR version (1.0.0 -> 2.0.0) since the changes will probably cause
   compiler breakages (things people imported won't need to be imported
   anymore)

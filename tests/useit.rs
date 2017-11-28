@@ -1,5 +1,5 @@
-extern crate prelude;
-use prelude::*;
+extern crate std_prelude;
+use std_prelude::*;
 
 #[test]
 fn it_works() {
