@@ -7,7 +7,8 @@ use std_prelude::*;
 // you now have access to HashMap, io::Write, str::FromStr, etc.
 ```
 
-For a full list of the items that are imported, see [lib.rs](src/lib.rs)
+For a full list of the items that are imported, see
+[the crate documentation][1]
 
 This library is to add several "often used" traits, structs and methods
 that (in the opinionated version of this author) should have been
@@ -36,3 +37,5 @@ I offer the following guarantees for this lib
   MAJOR version (1.0.0 -> 2.0.0) since the changes will probably cause
   compiler breakages (things people imported won't need to be imported
   anymore)
+
+[1]: https://docs.rs/std_prelude/0.2.2/std_prelude/
