@@ -1,10 +1,10 @@
 [package]
 name = "prelude"
-version = "0.2.0"
+version = "0.2.1"
 authors = ["Garrett Berg <vitiral@gmail.com>"]
 
-description = "prelude that the rust stdlib should have always had"
-repository = "https://github.com/vitiral/prelude"
+description = "RENAMED TO \"std_prelude\": prelude that the rust stdlib should have always had"
+repository = "https://github.com/vitiral/std_prelude"
 readme = "README.md"
 keywords = ["std", "prelude"]
 license = "MIT"
