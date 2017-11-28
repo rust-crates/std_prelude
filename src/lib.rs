@@ -14,6 +14,8 @@
 //! - `std::fmt::Write as FmtWrite`: adds `write_str` onto byte buffers
 //!   (such as `String`). Renamed `FmtWrite` to avoid conflict with
 //!   `std::io::Write`
+//! - `std::io::BufRead`: the `BufRead` trait allows you to use the methods associated with
+//!   the `BufReader` struct.
 //! - `std::io::Read`: allows you to use `file.read()`
 //! - `std::io::Seek`: allows you to use `file.seek()`
 //! - `std::io::Write as IoWrite`: allows you to use `file.write()`
@@ -38,16 +40,21 @@
 //!     - `File::write` to open a file for writing
 //! - `std::fs::OpenOptions` for more file opening options
 //! - `std::fs::ReadDir`: to iterate over the entries in a directory.
+//! - `std::io::BufReader`: the BufRead struct wraps `io::Read` using a buffer, reducing
+//!   the number of calls to the OS and providing nicer methods for accessing exactly what you want
+//!   (i.e. `read_line`).
+//! - `std::io::BufWriter`: similar to `BufReader`, buffers writes to reduce the number of calls to
+//!   the OS.
 //! - `std::path::{Path, PathBuf}`: specifies an os path.
 //! - `std::rc::Rc`: reference counted pointer
 //! - `std::sync::Arc`: atomically reference counted pointer
 //! - `std::sync::Mutex`: mutual exclusion primitive for threading.
 //! - `std::sync::atomic::{AtomicBool, AtomicIsize, AtomicUsize}`: basic
 //!   atomic types. Good for unique ids and lots of other use cases.
-//! - `std::sync::atomic::Ordering`: necessary for performing 
-//!   operations on atomic types. For incrementing a counter use 
+//! - `std::sync::atomic::Ordering`: necessary for performing
+//!   operations on atomic types. For incrementing a counter use
 //!   `val.fetch_add(1, Ordering::SeqCst)`.
-//! - `std::sync::atomic::ATOMIC_USIZE_INIT`: initialized `AtomicUsize` 
+//! - `std::sync::atomic::ATOMIC_USIZE_INIT`: initialized `AtomicUsize`
 //!   of 0. Use with `static COUNTER: AtomicUsize = ATOMIC_USIZE_INIT;`
 //! - `std::time::Duration`: an amount of time, used for
 //!   `std::thread::sleep`.
@@ -62,7 +69,11 @@
 // traits
 pub use std::ascii::AsciiExt;
 pub use std::fmt::{Debug, Write as FmtWrite};
-pub use std::io::{Read, Seek, SeekFrom, Write as IoWrite};
+pub use std::io::{
+    BufRead,
+    Read, Seek, SeekFrom,
+    Write as IoWrite,
+};
 pub use std::iter::FromIterator;
 pub use std::ops::{Deref, DerefMut};
 pub use std::str::FromStr;
@@ -75,13 +86,16 @@ pub use std::fs::{
     OpenOptions,
     ReadDir,
 };
+pub use std::io::{
+    BufReader, BufWriter,
+};
 pub use std::path::{Path, PathBuf};
 pub use std::rc::Rc;
 pub use std::sync::{Arc, Mutex};
 pub use std::sync::atomic::{
-    AtomicBool, 
-    AtomicIsize, 
-    AtomicUsize, 
+    AtomicBool,
+    AtomicIsize,
+    AtomicUsize,
     Ordering,
     ATOMIC_USIZE_INIT,
 };
