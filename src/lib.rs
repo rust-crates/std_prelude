@@ -10,6 +10,7 @@
 //!
 //! - `std::ascii::AsciiExt`: adds the `to_ascii_uppercase` onto `&str` types.
 //! - `std::fmt::Debug`: allows you to define Debug manually.
+//! - `std::hash::{Hash, Hasher}`: allows you to easily implement `Hash` on your types.
 //! - `std::fmt::Write as FmtWrite`: adds `write_str` onto byte buffers (such as `String`). Renamed
 //!   `FmtWrite` to avoid conflict with `std::io::Write`
 //! - `std::io::BufRead`: the `BufRead` trait allows you to use the methods associated with
@@ -75,6 +76,7 @@
 // traits
 pub use std::ascii::AsciiExt;
 pub use std::fmt::{Debug, Write as FmtWrite};
+pub use std::hash::{Hash, Hasher};
 pub use std::io::{
     BufRead,
     Read, Seek, SeekFrom,
