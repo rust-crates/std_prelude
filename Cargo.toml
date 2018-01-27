@@ -1,6 +1,6 @@
 [package]
 name = "std_prelude"
-version = "0.2.10"
+version = "0.2.11"
 authors = ["Garrett Berg <vitiral@gmail.com>"]
 
 description = "prelude that the rust stdlib should have always had"

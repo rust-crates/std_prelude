@@ -28,6 +28,8 @@
 //! time.
 //!
 //! - `std::collections::{BTreeMap, HashMap, HashSet}`: ordered-dict, dict and set
+//! - `std::cmp::{Ord, PartialOrd, Ordering}`: for defining the `Ord` and `PartialOrd` trait,
+//!   as well as working with types that use them.
 //! - `std::ffi::OsString`: os agnostic (non unicode) string type `std::path::PathBuf` uses this.
 //! - `std::fs::File`: for opening files.
 //!     - `File::open` to open a file for reading
@@ -47,8 +49,9 @@
 //! - `std::sync::Mutex`: mutual exclusion primitive for threading.
 //! - `std::sync::atomic::{AtomicBool, AtomicIsize, AtomicUsize}`: basic atomic types. Good for
 //!   unique ids and lots of other use cases.
-//! - `std::sync::atomic::Ordering`: necessary for performing operations on atomic types. For
-//!   incrementing a counter use `val.fetch_add(1, Ordering::SeqCst)`.
+//! - `std::sync::atomic::Ordering as AtomicOrdering`: necessary for performing operations on
+//!   atomic types. For incrementing a counter use `val.fetch_add(1, AtomicOrdering::SeqCst)`.
+//!   Renamed to not conflict with `std::cmp::Ordering`.
 //! - `std::sync::atomic::ATOMIC_USIZE_INIT`: initialized `AtomicUsize` of 0. Use with `static
 //!   COUNTER: AtomicUsize = ATOMIC_USIZE_INIT;`
 //! - `std::time::Duration`: an amount of time, used for `std::thread::sleep`.
@@ -75,6 +78,9 @@
 
 // traits
 pub use std::ascii::AsciiExt;
+pub use std::cmp::{
+    Ord, PartialOrd, Ordering
+};
 pub use std::fmt::{Debug, Write as FmtWrite};
 pub use std::hash::{Hash, Hasher};
 pub use std::io::{
@@ -104,7 +110,7 @@ pub use std::sync::atomic::{
     AtomicBool,
     AtomicIsize,
     AtomicUsize,
-    Ordering,
+    Ordering as AtomicOrdering,
     ATOMIC_USIZE_INIT,
 };
 pub use std::time::Duration;
