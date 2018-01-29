@@ -27,6 +27,9 @@
 //! These are extremely commonly used types and it is annoying to have to reimport them all the
 //! time.
 //!
+//! - `std::borrow::Cow`: A clone-on-write smart pointer, also known as copy on write. This is used
+//!   by many libraries to be as efficient as possible when returned data is identical to the data
+//!   passed in, among other uses.
 //! - `std::collections::{BTreeMap, HashMap, HashSet}`: ordered-dict, dict and set
 //! - `std::cmp::{Ord, PartialOrd, Ordering}`: for defining the `Ord` and `PartialOrd` trait,
 //!   as well as working with types that use them.
@@ -76,7 +79,8 @@
 //!   etc as well as a `consts` module with basic mathematical constants like `PI` and `E`.
 //! - `str`: core string type with `from_utf8` function.
 
-// traits
+// ------------------------------
+// ----------- TRAITS -----------
 pub use std::ascii::AsciiExt;
 pub use std::cmp::{
     Ord, PartialOrd, Ordering
@@ -92,7 +96,10 @@ pub use std::iter::FromIterator;
 pub use std::ops::{Deref, DerefMut};
 pub use std::str::FromStr;
 
-// structs
+
+// -------------------------------
+// ----------- STRUCTS -----------
+pub use std::borrow::Cow;
 pub use std::collections::{BTreeMap, HashMap, HashSet};
 pub use std::ffi::OsString;
 pub use std::fs::{
@@ -115,11 +122,15 @@ pub use std::sync::atomic::{
 };
 pub use std::time::Duration;
 
-// functions
+
+// ---------------------------------
+// ----------- FUNCTIONS -----------
 pub use std::mem::{size_of, size_of_val};
 pub use std::thread::{sleep, spawn};
 
-// modules
+
+// ---------------------------------
+// ----------- MODULES -----------
 
 pub use std::u8;
 pub use std::u16;
