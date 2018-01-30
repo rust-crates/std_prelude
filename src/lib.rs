@@ -8,19 +8,20 @@
 //!
 //! The following are the traits that are exported and why:
 //!
-//! - `std::ascii::AsciiExt`: adds the `to_ascii_uppercase` onto `&str` types.
-//! - `std::fmt::Debug`: allows you to define Debug manually and use in trait bounds.
-//! - `std::hash::{Hash, Hasher}`: allows you to define Hash manually and use in trait bounds.
-//! - `std::fmt::Write as FmtWrite`: adds `write_str` onto byte buffers (such as `String`). Renamed
-//!   `FmtWrite` to avoid conflict with `std::io::Write`
-//! - `std::io::BufRead`: the `BufRead` trait allows you to use the methods associated with
-//!   the `BufReader` struct.
-//! - `std::io::Read`: allows you to use `file.read()`
-//! - `std::io::Seek`: allows you to use `file.seek()`
-//! - `std::io::Write as IoWrite`: allows you to use `file.write()` and `file.write_all()`. Renamed
+//! - [**std::ascii::AsciiExt**](trait.AsciiExt.html): adds the `to_ascii_uppercase` onto `&str` types.
+//! - [**std::fmt::Debug**](trait.Debug.html): allows you to define Debug manually and use in trait bounds.
+//! - **std::hash::{[Hash](trait.Hash.html), [Hasher](trait.Hasher.html)}**: allows you to define
+//!   Hash manually and use in trait bounds.
+//! - [**std::fmt::Write as FmtWrite**](trait.FmtWrite.html): adds `write_str` onto byte buffers
+//!   (such as `String`). Renamed `FmtWrite` to avoid conflict with `std::io::Write`
+//! - [**std::io::BufRead**](trait.BufRead.html): the `BufRead` trait allows you to use the methods
+//!   associated with the `BufReader` struct (also imported).
+//! - [**std::io::Read**](trait.Read.html): allows you to use `file.read()`
+//! - [**std::io::Seek**](trait.Seek.html): allows you to use `file.seek()`
+//! - [**std::io::Write as IoWrite**](trait.IoWrite.html): allows you to use `file.write()` and `file.write_all()`. Renamed
 //!   `IoWrite` to avoid conflict with `std::fmt::Write`
-//! - `std::ops::{Deref, DerefMut}`: allows deref through `*v` and also enables Deref coercions
-//! - `std::str::FromStr`: allows you to use `type::from_str` constructor for several types. This
+//! - **std::ops::{[Deref](trait.Deref.html), [DerefMut](trait.DerefMut.html)}**: allows deref through `*v` and also enables Deref coercions
+//! - [**std::str::FromStr**](trait.FromStr.html): allows you to use `type::from_str` constructor for several types. This
 //!   is what is implicitly called with `str::parse<_>()`
 //!
 //! # Structs
