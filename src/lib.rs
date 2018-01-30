@@ -2,15 +2,15 @@
 //!
 //! # Traits
 //! Not having common traits imported is one of the most annoying gotchas in rust when coming from
-//! other languages. When you are used to the language, you expect the methods you are used to to
-//! always work... not so. Using `Vec::from_iter` is extremely common, but you must first import
-//! the `FromIterator` trait.
+//! other languages. When you are used to the language, you expect the commonly used methods to
+//! always work... not so in rust! Using `Vec::from_iter` is extremely common, but you must first
+//! import the `FromIterator` trait.
 //!
 //! The following are the traits that are exported and why:
 //!
 //! - `std::ascii::AsciiExt`: adds the `to_ascii_uppercase` onto `&str` types.
-//! - `std::fmt::Debug`: allows you to define Debug manually.
-//! - `std::hash::{Hash, Hasher}`: allows you to easily implement `Hash` on your types.
+//! - `std::fmt::Debug`: allows you to define Debug manually and use in trait bounds.
+//! - `std::hash::{Hash, Hasher}`: allows you to define Hash manually and use in trait bounds.
 //! - `std::fmt::Write as FmtWrite`: adds `write_str` onto byte buffers (such as `String`). Renamed
 //!   `FmtWrite` to avoid conflict with `std::io::Write`
 //! - `std::io::BufRead`: the `BufRead` trait allows you to use the methods associated with
@@ -23,21 +23,21 @@
 //! - `std::str::FromStr`: allows you to use `type::from_str` constructor for several types. This
 //!   is what is implicitly called with `str::parse<_>()`
 //!
-//! # structs
+//! # Structs
 //! These are extremely commonly used types and it is annoying to have to reimport them all the
 //! time.
 //!
-//! - `std::borrow::Cow`: A clone-on-write smart pointer, also known as copy on write. This is used
-//!   by many libraries to be as efficient as possible when returned data is identical to the data
-//!   passed in, among other uses.
+//! - `std::borrow::Cow`: A clone-on-write smart pointer (often called copy on write in other
+//!   languages). This is used by many libraries to be as efficient as possible when returned data
+//!   is identical to the data passed in, among other uses.
 //! - `std::collections::{BTreeMap, HashMap, HashSet}`: ordered-dict, dict and set
-//! - `std::cmp::{Ord, PartialOrd, Ordering}`: for defining the `Ord` and `PartialOrd` trait,
-//!   as well as working with types that use them.
-//! - `std::ffi::OsString`: os agnostic (non unicode) string type `std::path::PathBuf` uses this.
+//! - `std::cmp::{Ord, PartialOrd, Ordering}`: for manually defining `Ord` and `PartialOrd` traits
+//!   and adding trait bounds.
+//! - `std::ffi::OsString`: os agnostic (non unicode) string type. `std::path::PathBuf` uses this.
 //! - `std::fs::File`: for opening files.
 //!     - `File::open` to open a file for reading
 //!     - `File::write` to open a file for writing
-//! - `std::fs::OpenOptions` for more file opening options
+//! - `std::fs::OpenOptions` for more file opening options.
 //! - `std::fs::ReadDir`: to iterate over the entries in a directory.
 //! - `std::io::BufReader`: the BufRead struct wraps `io::Read` using a buffer reducing the number
 //!   of OS calls and giving helpful methods
@@ -59,17 +59,18 @@
 //!   COUNTER: AtomicUsize = ATOMIC_USIZE_INIT;`
 //! - `std::time::Duration`: an amount of time, used for `std::thread::sleep`.
 //!
-//! # functions
+//! # Functions
 //! These are mostly just "nice to have" functions and it is *really* unlikely that they would ever
 //! be overriden.
 //!
+//! - `std::cmp::{max, min}`: get the max or min of two comparable integers.
 //! - `std::mem::{size_of, size_of_val}`: get the size of a type. This is safe and common enough
 //!   that it should be always available.
 //! - `std::thread::sleep`: put the thread to sleep for a `Duration`.
 //! - `std::thread::spawn`: spawn a function in a new thread. In rust this is memory safe, so it is
 //!   nice to have it always available.
 //!
-//! # primitive-type modules
+//! # Modules (_primitive type_ only)
 //! The following modules are imported so that it is easy to access their relevant constants and
 //! constructors.
 //!
