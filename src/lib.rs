@@ -10,6 +10,7 @@
 //!
 //! - **std::ascii::[AsciiExt](trait.AsciiExt.html)**: adds the `to_ascii_uppercase` onto `&str`
 //!   types.
+//! - **std::borrow::[Borrow](trait.Borrow.html)**: for manually defining the `Borrow` trait.
 //! - **std::cmp::{[Ord](enum.Ord.html), [PartialOrd](enum.PartialOrd.html)}**: for manually
 //!   defining the Ordering traits and using them in trait bounds.
 //! - **std::fmt::[Debug](trait.Debug.html)**: allows you to define Debug manually and use in trait
@@ -95,6 +96,7 @@
 // ------------------------------
 // ----------- TRAITS -----------
 pub use std::ascii::AsciiExt;
+pub use std::borrow::Borrow;
 pub use std::cmp::{
     Ord, PartialOrd, Ordering
 };
