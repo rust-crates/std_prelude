@@ -85,8 +85,8 @@
 //! The following modules are imported so that it is easy to access their relevant constants and
 //! constructors.
 //!
-//! - **u8 u16 u64 usize**: unsigned integer modules with `MAX` and `MIN`
-//! - **i8 i16 i64 isize**: signed integer modules with `MAX` and `MIN`
+//! - **u8 u16 u32 u64 usize**: unsigned integer modules with `MAX` and `MIN`
+//! - **i8 i16 i32 i64 isize**: signed integer modules with `MAX` and `MIN`
 //! - **f32 f64**: floating point modules with not just `MAX` and `MIN` but also `NAN`, `INFINITY`,
 //!   etc as well as a [f32::consts](f32/consts/index.html) and [f64::consts](f64/consts/index.html)
 //!   modules with basic mathematical constants like `PI` and `E`.
@@ -149,10 +149,12 @@ pub use std::thread::{sleep, spawn};
 
 pub use std::u8;
 pub use std::u16;
+pub use std::u32,
 pub use std::u64;
 pub use std::usize;
 pub use std::i8;
 pub use std::i16;
+pub use std::i32;
 pub use std::i64;
 pub use std::isize;
 pub use std::f32;
