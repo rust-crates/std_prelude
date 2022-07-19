@@ -149,7 +149,7 @@ pub use std::thread::{sleep, spawn};
 
 pub use std::u8;
 pub use std::u16;
-pub use std::u32,
+pub use std::u32;
 pub use std::u64;
 pub use std::usize;
 pub use std::i8;
